@@ -10,8 +10,14 @@ go get -u github.com/dvyukov/go-fuzz/go-fuzz github.com/dvyukov/go-fuzz/go-fuzz-
 
 Go to `$GOPATH$/src/github.com/klauspost/simdjson-fuzz`
 
-Execute:
+Crash testing, execute:
 ```
 go-fuzz-build -o=fuzz-build.zip -func=Fuzz .
+go-fuzz -bin=fuzz-build.zip -workdir=corpus
+```
+
+Correctness testing, execute:
+```
+go-fuzz-build -o=fuzz-build.zip -func=FuzzCorrect .
 go-fuzz -bin=fuzz-build.zip -workdir=corpus
 ```
