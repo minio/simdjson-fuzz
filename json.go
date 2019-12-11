@@ -6,8 +6,9 @@ package json
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/fwessels/simdjson-go"
 	"strings"
+
+	"github.com/fwessels/simdjson-go"
 )
 
 func Fuzz(data []byte) (score int) {
@@ -53,11 +54,16 @@ func Fuzz(data []byte) (score int) {
 	if i.PeekNextTag() != simdjson.TagEnd {
 		_, err = i.MarshalJSON()
 		if err != nil {
-			panic(err)
+			switch {
+			// This is ok.
+			case strings.Contains(err.Error(), "INF or NaN number found"):
+			default:
+				panic(err)
+			}
 		}
 	}
 	// Do simple ND test.
-	d2 := append(make([]byte,0,len(data)*3+2), data...)
+	d2 := append(make([]byte, 0, len(data)*3+2), data...)
 	d2 = append(d2, '\n')
 	d2 = append(d2, data...)
 	d2 = append(d2, '\n')
