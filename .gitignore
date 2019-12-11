@@ -13,3 +13,4 @@
 /fuzz-build.zip
 /corpus/crashers
 /corpus/suppressions
+/.idea
