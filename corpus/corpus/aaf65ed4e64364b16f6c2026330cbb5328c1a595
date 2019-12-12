@@ -1,0 +1,9 @@
+{"": {
+  "": [   
+    {
+      "": "CDS",
+      "servlet-class": "x.cds.CDSServlet",
+      "init-param": {
+    },
+ 
+  "tagss": "

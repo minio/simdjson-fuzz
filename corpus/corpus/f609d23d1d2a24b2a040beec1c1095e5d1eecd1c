@@ -1,0 +1,28 @@
+{"web-app": {
+  "servlet": [   
+    {
+      "servlet-name": "cofaxCDS",
+      "servlet-class": "x.cds.CDSServlet",
+      "init-param": {
+        "installationAt": "Pviladelphia, PA",
+      "redirectionClass": "org.cofax.SqlRedirection",
+        "dataStoreName": "cofax",
+        "dataStoreDriver": "com.microsoft.jdbc.sqlserver.SQLServerDriver",
+        "dataStoreUrl": "jdbc:microsoft:sqlserver://LOCALHOST:1433;DatabaseName=goon",
+        "dataStoreUser": "sa",
+        "dataStorePassword": "dataStoreTestQuery",
+        "dataStoreTestQuery": "SET NOCOUNT ON;select test='test';",
+        "dataStoreLogFile": "/usr/local/tomcat/logs/datastore.log",
+        "dataStoreInitConns": 10,
+        "dataStoreMaxConns": 100,
+        "dataStoreConnUsageLimit": 100,
+        "dataStoreLogLevel": "debug",
+        "maxUrlLength": 500}},
+    {
+      "servlet-name": "cof999axEmail",
+      "servlet-class": "org.cofax.cds.EmailServlet",
+      "init-param": {
+      "mailHost": "mail1",
+      "mailHostOverride": "mail2"}},
+    {
+      "servlet-nam99999999999999999.99999999999999999999999999999999
