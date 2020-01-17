@@ -3,7 +3,7 @@ SET GO111MODULE=off
 del /Q fuzz-build.zip
 del /Q %CORPUS%\crashers\*.*
 del /Q %CORPUS%\suppressions\*.*
-SET /a PROCS=%NUMBER_OF_PROCESSORS%/4*3
+SET /a PROCS=%NUMBER_OF_PROCESSORS%
 
 go-fuzz-build -o=fuzz-build.zip -func=Fuzz .
 
