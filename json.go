@@ -17,7 +17,7 @@ func Fuzz(data []byte) (score int) {
 	pj, err := simdjson.Parse(data, nil)
 	jErr := json.Unmarshal(data, &dst)
 	if err != nil {
-		if jErr == nil {
+		if jErr == nil && dst != nil {
 			msg := fmt.Sprintf("got error %v, but json.Unmarshal could unmarshal", err)
 			// Disabled for now:
 			if false {

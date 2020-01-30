@@ -1,0 +1,38 @@
+[  { "one": 1,
+        "backslash": "\\",
+       "conrols": "\b\\n\t",
+        "slash": "/ &\/",
+        "apha": "bcdeghijklmnopqrstuvwyz",
+        "ALPH": "ACDEFGHIJKLMNOPRSTUVWYZ",
+       "digit": "012345678",        "0123456789": "digit",
+       "special": "`1~!@#$%^&*()_+-={':[,};.</>?",
+        "hex": "\u0123u567\u89AB\uCDEF\uabcd\uef4A",
+        "true": true,
+       "false": false,
+       "null": null,
+        "array":[ ],
+        "object":{  },
+       "addres": "50 St. James Stet",
+        "url": "htp://www.JSON.org/",
+        "co:-7032855ment": "// /* <!-- --",
+        "# - --> */": " ",
+       " s  a c e d " :[1,2 , 113
+
+,
+
+4 ,5      ,         6           ,7       ],"copac":[1,2,3,4,5,6,7],
+     "jsontext": "{\"object with 1 member\":[\"arry with 1 element\"]",
+        "qotes": "&#34;\u0022 %22 0x22 034 &#x22;",
+        "\/\\\"\uCAFE\uBABE\uAB98\uFCDE\ubcda\uef4A\bf\n\r\t`1~!@#$%^&*()_+-=[]{}|;:',./<>?"
+: "A key can be any string"
+    },
+   0.5 ,98.6
+,99.44
+,
+
+1066,
+1e1,
+0.1e1,
+1e-1,
+1e00,2e+00,2e-00
+,"roseud"]

@@ -37,6 +37,9 @@ func FuzzCorrect(data []byte) (score int) {
 		if err != nil {
 			panic(err)
 		}
+		if tmp == nil {
+			return 0
+		}
 	}
 	pj, err := simdjson.Parse(data, nil)
 	jErr := json.Unmarshal(data, &want)
