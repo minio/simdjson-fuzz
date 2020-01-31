@@ -172,6 +172,10 @@ func FuzzCorrect(data []byte) (score int) {
 		if len(want)+len(got) == 0 {
 			return 0
 		}
+		if bytes.Equal(bytes.ReplaceAll(wantB, []byte("-0"), []byte("0")), bytes.ReplaceAll(gotB, []byte("-0"), []byte("0"))) {
+			// let -0 == 0
+			return 1
+		}
 		allOfit := pj.Iter()
 		simdOut, _ := allOfit.MarshalJSON()
 
