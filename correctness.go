@@ -4,9 +4,9 @@
 package json
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
-	"reflect"
 	"strings"
 	"unicode/utf8"
 
@@ -102,28 +102,80 @@ func FuzzCorrect(data []byte) (score int) {
 			panic(err)
 		}
 	}
+	var wantB []byte
+	var gotB []byte
 	if want != nil {
 		// We should be able to unmarshal into msi
-		err := json.Unmarshal(data, &got)
+		i := pj.Iter()
+		i.AdvanceInto()
+		for i.Type() != simdjson.TypeNone {
+			switch i.Type() {
+			case simdjson.TypeRoot:
+				i.Advance()
+			case simdjson.TypeObject:
+				obj, err := i.Object(nil)
+				if err != nil {
+					panic(err)
+				}
+				got, err = obj.Map(got)
+				if err != nil {
+					panic(err)
+				}
+				i.Advance()
+			default:
+				allOfit := pj.Iter()
+				msg, _ := allOfit.MarshalJSON()
+				panic(fmt.Sprintf("Unexpected type: %v, all: %s", i.Type(), string(msg)))
+			}
+		}
+		gotB, err = json.Marshal(got)
 		if err != nil {
-			msg := fmt.Sprintf("unable to marshal output: %v", jErr)
-			panic(msg)
+			panic(err)
+		}
+		wantB, err = json.Marshal(want)
+		if err != nil {
+			panic(err)
 		}
 	}
 	if wantA != nil {
 		// We should be able to unmarshal into msi
-		err := json.Unmarshal(data, &gotA)
+		i := pj.Iter()
+		i.AdvanceInto()
+		for i.Type() != simdjson.TypeNone {
+			switch i.Type() {
+			case simdjson.TypeRoot:
+				i.Advance()
+			case simdjson.TypeArray:
+				arr, err := i.Array(nil)
+				if err != nil {
+					panic(err)
+				}
+				gotA, err = arr.Interface()
+				if err != nil {
+					panic(err)
+				}
+				i.Advance()
+			default:
+				panic(fmt.Sprintf("Unexpected type: %v", i.Type()))
+			}
+		}
+		gotB, err = json.Marshal(gotA)
 		if err != nil {
-			msg := fmt.Sprintf("unable to marshal array output: %v", jErr)
-			panic(msg)
+			panic(err)
+		}
+		wantB, err = json.Marshal(wantA)
+		if err != nil {
+			panic(err)
 		}
 	}
-	if !reflect.DeepEqual(want, got) {
-		msg := fmt.Sprintf("Marshal data mismatch:\nstdlib: %#v\nsimdjson:%#v", want, got)
-		panic(msg)
-	}
-	if !reflect.DeepEqual(wantA, gotA) {
-		msg := fmt.Sprintf("Marshal array mismatch:\nstdlib: %#v\nsimdjson:%#v", wantA, gotA)
+	if !bytes.Equal(gotB, wantB) {
+		if len(want)+len(got) == 0 {
+			return 0
+		}
+		allOfit := pj.Iter()
+		simdOut, _ := allOfit.MarshalJSON()
+
+		msg := fmt.Sprintf("Marshal data mismatch:\nstdlib: %v\nsimdjson:%v\n\nsimdjson:%s", string(wantB), string(gotB), string(simdOut))
 		panic(msg)
 	}
 
