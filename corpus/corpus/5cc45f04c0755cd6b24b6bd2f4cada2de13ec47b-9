@@ -1,0 +1,37 @@
+[{"":"","s":"","":"","r":[]},{"r":0,"l":6,"e":2,"E":4,"":9,"o":0,"n":1,"c":"","t":"","k":"","s":"","h":"","a":"","A":"","i":"","9":"","al":"","x":"","u":true,"se":false,"ll":null,"y":[],"t":{},"ss":"","rl":"","nt":"","/":""," ":[1,true,true,5],"ch":"\\","ls":"","sh":"","ha":"","H":"","it":"","8":"","l":"","ex":"","ue":true,"le":false,"r":[]},{"r":0,"l":6,"e":2,"E":4,"":9,"o":0,"n":1,"c":"","t":"","k":"","s":"","h":"","a":"","A":"","i":"","9":"","al":"","x":"","u":true,"se":false,"ll":null,"y":[],"ct":{},"ss":"","rl":"","nt":"","/":""," ":[1,true,true,5],"ch":"\\","ls":"","sh":"","ha":"","H":"","it":"","8":"","il":"","ex":"","ue":true,"le":false,"ul":null,"ay":[],"ec":{},"T":"","ur":"","et":"","*":"","d":[1,3,4,5,6],"p":[1],"ul":null,"ay":[],"ec":{},"T":"","ur":"","et":"","*":"","d":[1,3,4,5,6],"p":[1],"xt":"\"\"\"\f\r\t",
+       "slash": "/ & \/",
+        "alpha": "abcdefgijklmnopqrstuwyz",
+       "ALPHA": "ABCDEFGHIJKLMNOPQRSTUVWYZ",
+       "digkt": "0123456789",
+     "0123456789": "dgit",
+        "special": "`1~!@#$%^&*()_+-={':[,]}|;.</>?",
+        "hex": "\u0123\u4567\u89AB\uCDEF\uabcd\uef4A",
+       "rue": true,
+       "false": false,
+        "null": null,
+      "array":[  ],
+        "object":{  },
+        "addres": "5 St. James Street",
+        "url": "http://www.JSON.org/",
+        "comment": "// /* !-- --",
+        "# -- -->*/": " ",
+        " s p a c e d " :[1,2 , 3
+
+,
+
+4 , 5        ,         6           ,7    ],"compct":[1,2,3,4,5,6,7],
+        "jsontext": "{\"object ith 1 meber\":[\"array with 1 element\"]{",
+       "quotes": "&#4; u0022 22 0x2 034&#x22;",
+      "\/\\\\CAFE\uBABE\uAB98\uFCDE\ubcdauef4A\b\f\n\r\t`1~!@#$%^&*()_+-=[]{|;:',./<>?"
+: "A ney can beany sting"
+    },
+   0.5 ,98.6
+,
+99.284
+,
+106,
+1025e1,
+0.1e1,
+1e-1,
+1e0,2e+00,2e-00
+,"rosebud"]
