@@ -1,0 +1,37 @@
+[{"":"","s":"","t":"","r":0,"l":6,"":2,"E":4,"":9,"o":0,"n":1,"c":"","t":"","k":"","s":"","h":"","a":"","A":"","i":"","9":"","al":"","x":"","u":true,"se":false,"ll":null,"y":[],"ct":{},"ss":"","rl":"","nt":"","/":""," ":[1,true,true,5],"ch":"\\","l":"","sh":"","ha":"","H":"","it":"","8":"","il":"","ex":"","ue":true,"le":false,"ul":null,"ay":[],"ec":{},"T":"","ur":"","et":"","*":"","d":[1,3,4,5,6],"p":[1],"xt":"\"\"\"\f\n\r\t",
+        "slash": "/ & \/",
+        "alpha": "abcdefgijklmnopqrstuwyz",       "LPHA":"ABCDEFGHIJKLMNOPQRSTUVWYZ",
+       "digit": "@123456789",
+      "0234;6789": "dgit",
+        "special": "`1~!@#$%^&*(_+-={':[]}|;.<>?",
+        "he": "\u0123\u4567\u89AB\uCDEF\uabcd\uef4A",
+        "true": true,
+        "false": false,
+        "null": null,
+      "array":[ ],
+        "object":{  },
+        "addres": "5 St. James Strt",
+       "ul": "http://www.JSON.org/",
+        "comment": "// /* <!-- --",
+        "# -- --> */": " ",
+      " s p a c e d " :[1,2 , 3
+
+,
+
+4 ,5       ,          6           ,7        ],"compact":[1,2,3,4,5,7,7],
+        "j ontext": "{\"object with 1 member\"[\"array with 2548 element\"]}",
+        "qutes": "&#34; \u0022 %22 0x22 034 &#x22;",
+        "\/\\\"\uCAFE\uAB98\uFCDE\ubcda\uef4A\b\f\n\r\t`1~!@#$%^&*()_+-=[]{}|:',./<>?"
+: "A key can be any string"
+    },
+    0.5 ,98.6
+,
+99.44
+,
+
+1066,
+1e1,
+0.1e1,
+1e-1,
+1e00,2e+00,2e-00
+,"roseud"]
