@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/fwessels/simdjson-go"
+	"github.com/minio/simdjson-go"
 )
 
 func Fuzz(data []byte) (score int) {

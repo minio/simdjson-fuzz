@@ -10,7 +10,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/fwessels/simdjson-go"
+	"github.com/minio/simdjson-go"
 )
 
 // FuzzCorrect will check for correctness and compare output to stdlib.

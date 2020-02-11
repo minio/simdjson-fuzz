@@ -1,5 +1,5 @@
 # simdjson-fuzz
-Fuzzers and corpus for [github.com/fwessels/simdjson-go](https://github.com/fwessels/simdjson-go)
+Fuzzers and corpus for [github.com/minio/simdjson-go](https://github.com/minio/simdjson-go)
 
 # running
 
@@ -21,3 +21,5 @@ Correctness testing, execute:
 go-fuzz-build -o=fuzz-build.zip -func=FuzzCorrect .
 go-fuzz -bin=fuzz-build.zip -workdir=corpus
 ```
+
+This package does on purpose not use modules.
