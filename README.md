@@ -1,7 +1,8 @@
 # simdjson-fuzz
+
 Fuzzers and corpus for [github.com/minio/simdjson-go](https://github.com/minio/simdjson-go)
 
-# running
+# Running
 
 ```
 go get -u github.com/minio/simdjson-fuzz
@@ -23,3 +24,23 @@ go-fuzz -bin=fuzz-build.zip -workdir=corpus
 ```
 
 This package does on purpose not use modules.
+
+Feel free to submit additional corpus as Pull Requests.
+
+# Timeouts
+
+Due to problems with the current Go fuzzer better results can often be obtained by running the fuzzer for
+a shorter time period and restarting it.
+
+A Go program is supplied to do that will run the supplied command for a specific duration.
+
+A continuously looping script can be created in bash for instance:
+
+```
+go-fuzz-build -o=fuzz-build.zip -func=FuzzCorrect .
+while true; do
+    go run timeout.go -duration=10m go-fuzz -bin=fuzz-build.zip -workdir=corpus`
+done
+```
+
+In the example the fuzzer runs for 10 minutes before exiting.
