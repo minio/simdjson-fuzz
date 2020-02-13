@@ -39,7 +39,7 @@ A continuously looping script can be created in bash for instance:
 ```
 go-fuzz-build -o=fuzz-build.zip -func=FuzzCorrect .
 while true; do
-    go run timeout.go -duration=10m go-fuzz -bin=fuzz-build.zip -workdir=corpus`
+    go run timeout.go -duration=10m go-fuzz -bin=fuzz-build.zip -workdir=corpus
 done
 ```
 
