@@ -4,11 +4,11 @@ Fuzzers and corpus for [github.com/minio/simdjson-go](https://github.com/minio/s
 # running
 
 ```
-go get -u github.com/klauspost/simdjson-fuzz
+go get -u github.com/minio/simdjson-fuzz
 go get -u github.com/dvyukov/go-fuzz/go-fuzz github.com/dvyukov/go-fuzz/go-fuzz-build
 ```
 
-Go to `$GOPATH$/src/github.com/klauspost/simdjson-fuzz`
+Go to `$GOPATH$/src/github.com/minio/simdjson-fuzz`
 
 Crash testing, execute:
 ```
