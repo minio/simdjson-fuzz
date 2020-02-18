@@ -11,10 +11,14 @@ import (
 
 // FuzzCorrect will check for correctness and compare output to stdlib.
 func FuzzSerialize(data []byte) (score int) {
+	// Create a tape from the input and ensure that the output of JSON matches.
 	pj, err := simdjson.Parse(data, nil)
 	if err != nil {
-		// Don't continue
-		return 0
+		pj, err = simdjson.ParseND(data, pj)
+		if err != nil {
+			// Don't continue
+			return 0
+		}
 	}
 	i := pj.Iter()
 	want, err := i.MarshalJSON()
@@ -22,9 +26,9 @@ func FuzzSerialize(data []byte) (score int) {
 		panic(err)
 	}
 	// Check if we can convert back
+	s := simdjson.NewSerializer()
 	for _, comp := range []simdjson.CompressMode{simdjson.CompressNone, simdjson.CompressFast, simdjson.CompressDefault, simdjson.CompressBest}{
 		level := fmt.Sprintf("level-%d:", comp)
-		s := simdjson.NewSerializer()
 		s.CompressMode(comp)
 		serialized := s.Serialize(nil, *pj)
 		dePJ, err := s.Deserialize(serialized, nil)
