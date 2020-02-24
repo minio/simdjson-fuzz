@@ -27,23 +27,26 @@ func FuzzSerialize(data []byte) (score int) {
 	}
 	// Check if we can convert back
 	s := simdjson.NewSerializer()
+	got := make([]byte,0, len(want))
+	var dst []byte
+	var target *simdjson.ParsedJson
 	for _, comp := range []simdjson.CompressMode{simdjson.CompressNone, simdjson.CompressFast, simdjson.CompressDefault, simdjson.CompressBest}{
 		level := fmt.Sprintf("level-%d:", comp)
 		s.CompressMode(comp)
-		serialized := s.Serialize(nil, *pj)
-		dePJ, err := s.Deserialize(serialized, nil)
+		dst := s.Serialize(dst[:0], *pj)
+		target, err = s.Deserialize(dst, target)
 		if err != nil {
 			panic(level+err.Error())
 		}
-		i := dePJ.Iter()
-		got, err := i.MarshalJSON()
+		i := target.Iter()
+		got, err = i.MarshalJSONBuffer(got[:0])
 		if err != nil {
 			panic(level+err.Error())
 		}
 		if !bytes.Equal(want, got) {
 			err := fmt.Sprintf("%s JSON mismatch:\nwant: %s\ngot :%s", level, string(want), string(got))
 			err += fmt.Sprintf("\ntap0:%x", pj.Tape)
-			err += fmt.Sprintf("\ntap1:%x", dePJ.Tape)
+			err += fmt.Sprintf("\ntap1:%x", target.Tape)
 			panic(err)
 		}
 	}
