@@ -1,5 +1,5 @@
 SET CORPUS=corpus
-SET GO111MODULE=off
+SET GO111MODULE=auto
 SET ARCHIVE=fuzz-correct-build.zip
 del /Q %ARCHIVE%
 del /Q %CORPUS%\crashers\*.*

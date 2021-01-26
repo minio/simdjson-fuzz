@@ -17,7 +17,7 @@ import (
 func FuzzCorrect(data []byte) (score int) {
 	const (
 		// fail if simdjson doesn't report error, but json.Unmarshal does
-		failOnMissingError = false
+		failOnMissingError = true
 		// Run input through json.Unmarshal/json.Marshal first
 		filterRaw = true
 	)

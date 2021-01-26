@@ -4,7 +4,7 @@ SET ARCHIVE=fuzz-build.zip
 del /Q %ARCHIVE%
 del /Q %CORPUS%\crashers\*.*
 del /Q %CORPUS%\suppressions\*.*
-SET /a PROCS=%NUMBER_OF_PROCESSORS%
+SET /a PROCS=%NUMBER_OF_PROCESSORS%*3/4
 
 go-fuzz-build -o=%ARCHIVE% -func=Fuzz .
 
