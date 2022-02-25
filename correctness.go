@@ -87,7 +87,7 @@ func FuzzCorrect(data []byte) (score int) {
 	i := pj.Iter()
 	if i.PeekNextTag() == simdjson.TagEnd {
 		if len(want)+len(wantA) > 0 {
-			msg := fmt.Sprintf("stdlib returned data %#v, but nothing from simdjson (tap:%d, str:%d, err:%v)", want, len(pj.Tape), len(pj.Strings), err)
+			msg := fmt.Sprintf("stdlib returned data %#v, but nothing from simdjson (tap:%d, str:%d, err:%v)", want, len(pj.Tape), len(pj.Strings.B), err)
 			panic(msg)
 		}
 		return 0

@@ -1,0 +1,10 @@
+{
+  "servlet":[{
+      "servlet-name":"cofaxCDS","servlet-class":"x.cds.CDSServlet","init-param":{
+        "installationAt":"Philadelphia, PA","adminEmail":"kscom","poweredBy":"Cofax","poweredByIcon":"/images/cofax.gif","staticPath":"/conten","templatePath":"templates","templateOverridePath":"","defaultListTemplate":false,"defaueTestQuery":"SET NOCOUNT ON;select test='test';","dataStoreLogFile":"/usr/local/tomcat/logs/datastore.log","dataStoreInitConns":0,"dataStoreMaxConns":1,"dataStoreConnUsageLimit":1,"dataStoreLogLevel":"debug","maxUrlLength":5}},{
+      "servlet-name":"cofaxEmail","servlet-class":"org.cofax.cds.EmailServlet","init-param":{
+      "mailHost":"mail1","mailHostOverride":"mail2"}},{
+      "servlet-name":"cofaxAdmin","servlet-class":"org.cofax.cds.AdminServlet","option":true},{
+      "servlet-name":"fileServlet","option":false,"servs":"org.cofax.cds.FileServlet"},{
+      "servlet-name":"cofaxTools","servl":"org.cofax.cms.CofaxToolsServlet","asdasd":3,"init-param":{
+      ,
